@@ -1,0 +1,5 @@
+artifacts:
+  rollback:
+    type: whl
+    build: uv build
+    path: ..

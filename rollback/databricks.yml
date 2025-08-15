@@ -1,0 +1,20 @@
+bundle:
+  name: rollback
+
+include:
+  - artifacts/*.yml
+  - resources/jobs/*.yml
+  - resources/pipelines/*.yml
+  - targets/*.yml
+  - variables/*.yml
+
+targets:
+  dev:
+    workspace: https://adb-4280611164646789.9.azuredatabricks.net
+    catalog: cdp-dev-curated-rollback-test-jonas
+    external_location: abfss://loc-dev-curated-rollback-test-jonas@stcdphubcurateddev.dfs.core.windows.net/
+
+  prod:
+    workspace: https://adb-1232603156744818.18.azuredatabricks.net
+    catalog: cdp-prod-curated-rollback-test-jonas
+    external_location: abfss://loc-prod-curated-rollback-test-jonas@stcdphubcuratedprod.dfs.core.windows.net/
