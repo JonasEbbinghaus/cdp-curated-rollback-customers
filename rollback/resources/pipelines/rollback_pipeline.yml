@@ -1,0 +1,8 @@
+resources:
+  pipelines:
+    rollback_pipeline:
+      name: rollback_pipeline
+      target: rollback_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../../src/dlt_pipeline.ipynb
